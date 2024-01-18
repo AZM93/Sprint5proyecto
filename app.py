@@ -1,7 +1,6 @@
 import pandas as pd
 import streamlit as st
 import plotly.express as px
-import os
 
 car_data = pd.read_csv("vehicles_us.csv")# leer los datos
 
@@ -12,7 +11,7 @@ st.header('Aplicación de Análisis de Vehículos')
 hist_button = st.button('Construir Histograma')
 
 if hist_button:
-    st.write('Construcción de un histograma para el conjunto de datos de anuncios de venta de coches')
+    st.write('Histograma anuncios de venta de coches')
     # Crear un histograma
     fig_hist = px.histogram(car_data, x="odometer")
     # Mostrar el gráfico Plotly interactivo
@@ -22,8 +21,28 @@ if hist_button:
 scatter_button = st.button('Construir Gráfico de Dispersión')
 
 if scatter_button:
-    st.write('Construcción de un gráfico de dispersión para el conjunto de datos de anuncios de venta de coches')
-    # Crear un gráfico de dispersión
-    fig_scatter = px.scatter(car_data, x="year", y="price")
+    st.write('Gráfico de dispersión para los anuncios de venta de coches')
+    # Crear un gráfico de dispersión utilizando "model_year" en lugar de "year"
+    fig_scatter = px.scatter(car_data, x="model_year", y="price")
     # Mostrar el gráfico Plotly interactivo
     st.plotly_chart(fig_scatter, use_container_width=True)
+
+# Botón para construir un gráfico de barras
+bar_chart_button = st.button('Gráfico de Barras (Combustible)')
+
+if bar_chart_button:
+    st.write('Grafico de barras para la distribución de tipos de combustible')
+    # Crear un gráfico de barras
+    fig_bar = px.bar(car_data, x="fuel", title="Distribución de Tipos de Combustible")
+    # Mostrar el gráfico Plotly interactivo
+    st.plotly_chart(fig_bar, use_container_width=True)
+
+# Botón para construir un gráfico de pastel
+pie_chart_button = st.button('Construir Gráfico de Pastel (Tracción a las Cuatro Ruedas)')
+
+if pie_chart_button:
+    st.write('Gráfico de pastel de vehículos con tracción a las cuatro ruedas')
+    # Crear un gráfico de pastel
+    fig_pie = px.pie(car_data, names="is_4wd", title="Proporción de Vehículos con Tracción a las Cuatro Ruedas")
+    # Mostrar el gráfico Plotly interactivo
+    st.plotly_chart(fig_pie, use_container_width=True)
