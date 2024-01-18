@@ -4,12 +4,6 @@ import plotly.express as px
 
 car_data = pd.read_csv("vehicles_us.csv")# leer los datos
 
-# Tratar los valores nulos en la columna "is_4wd"
-car_data['is_4wd'] = car_data['is_4wd'].fillna(0)
-
-# Mapear los valores de la columna "is_4wd" a etiquetas descriptivas
-car_data['is_4wd'] = car_data['is_4wd'].map({True: 'Con Tracción a las Cuatro Ruedas', False: 'Sin Tracción a las Cuatro Ruedas', 1: 'Con Tracción a las Cuatro Ruedas',0: "Sin Tracción a las Cuatro Ruedas"})
-
 # Encabezado de la aplicación
 st.header('Aplicación de Análisis de Vehículos')
 
@@ -48,7 +42,7 @@ pie_chart_button = st.button('Construir Gráfico de Pastel (Tracción a las Cuat
 
 if pie_chart_button:
     st.write('Gráfico de pastel de vehículos con tracción a las cuatro ruedas')
-    # Crear un gráfico de pastel
-    fig_pie = px.pie(car_data, names="is_4wd", title="Proporción de Vehículos con Tracción a las Cuatro Ruedas")
+    # Crear un gráfico de pastel sin mapear valores
+    fig_pie = px.pie(car_data, names="is_4wd", title="Proporción de Vehículos con Tracción a las Cuatro Ruedas", color_discrete_sequence=px.colors.qualitative.Set3)
     # Mostrar el gráfico Plotly interactivo
     st.plotly_chart(fig_pie, use_container_width=True)
