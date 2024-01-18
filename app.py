@@ -4,9 +4,6 @@ import plotly.express as px
 
 car_data = pd.read_csv("vehicles_us.csv")# leer los datos
 
-# Mapear los valores de la columna "is_4wd" a etiquetas descriptivas
-car_data['is_4wd'] = car_data['is_4wd'].map({True: 'Con Tracción a las Cuatro Ruedas', False: 'Sin Tracción a las Cuatro Ruedas', 1: 'Con Tracción a las Cuatro Ruedas'})
-
 # Encabezado de la aplicación
 st.header('Aplicación de Análisis de Vehículos')
 
