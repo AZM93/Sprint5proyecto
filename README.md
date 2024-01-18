@@ -22,7 +22,8 @@ El cuadro de mandos de la aplicación incluye:
 - **Histograma de Odómetro:**  Muestra la distribución del odómetro de los vehículos.
 - **Gráfico de Dispersión:**  Representa el precio en función del año del modelo.
 - **Gráfico de Barras (Combustible):**  Visualiza la distribución de tipos de combustible.
-- **Gráfico de Pastel (Tracción a las Cuatro Ruedas):**  Muestra la proporción de vehículos con y sin tracción a las cuatro ruedas.            1 = Tracción en las 4 ruedas 
+- **Gráfico de Pastel (Tracción a las Cuatro Ruedas):**  Muestra la proporción de vehículos con y sin tracción a las cuatro ruedas.
+- 1 = Tracción en las 4 ruedas 
 
 
 ## Notas a Considerar
