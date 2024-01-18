@@ -5,10 +5,10 @@ import plotly.express as px
 car_data = pd.read_csv("vehicles_us.csv")# leer los datos
 
 # Tratar los valores nulos en la columna "is_4wd"
-car_data['is_4wd'] = car_data['is_4wd'].fillna('No especificado')
+car_data['is_4wd'] = car_data['is_4wd'].fillna(0)
 
 # Mapear los valores de la columna "is_4wd" a etiquetas descriptivas
-car_data['is_4wd'] = car_data['is_4wd'].map({True: 'Con Tracción a las Cuatro Ruedas', False: 'Sin Tracción a las Cuatro Ruedas', 1: 'Con Tracción a las Cuatro Ruedas'})
+car_data['is_4wd'] = car_data['is_4wd'].map({True: 'Con Tracción a las Cuatro Ruedas', False: 'Sin Tracción a las Cuatro Ruedas', 1: 'Con Tracción a las Cuatro Ruedas',0: "Sin Tracción a las Cuatro Ruedas"})
 
 # Encabezado de la aplicación
 st.header('Aplicación de Análisis de Vehículos')
@@ -39,7 +39,7 @@ bar_chart_button = st.button('Gráfico de Barras (Combustible)')
 if bar_chart_button:
     st.write('Grafico de barras para la distribución de tipos de combustible')
     # Crear un gráfico de barras
-    fig_bar = px.bar(car_data, x="fuel", title="Distribución de Tipos de Combustible", color = "#E0F4FF")
+    fig_bar = px.bar(car_data, x="fuel", title="Distribución de Tipos de Combustible")
     # Mostrar el gráfico Plotly interactivo
     st.plotly_chart(fig_bar, use_container_width=True)
 
