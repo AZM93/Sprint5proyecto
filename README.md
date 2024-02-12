@@ -1,4 +1,4 @@
-# Proyecto de Análisis de Vehículos
+# Análisis Exploratorio de Vehículos
 https://autos-en-los-estados-unidos.onrender.com
 
 Este proyecto Render para crear una aplicación web interactiva que analiza y visualiza datos relacionados con anuncios de venta de vehículos. La aplicación proporciona gráficos interactivos que permiten explorar características como el odómetro, el año del modelo, el precio y más.
