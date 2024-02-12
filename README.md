@@ -1,5 +1,3 @@
-# Sprint-5-proyecto
-
 # Proyecto de Análisis de Vehículos
 https://autos-en-los-estados-unidos.onrender.com
 
